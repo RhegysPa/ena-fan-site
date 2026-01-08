@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Dream BBQ</title>
+    <!-- Req 3: Página utilizando Bootstrap (Desenvolvimento Ágil) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Req 8: Espaçamento 1.5 global */
+        body {
+            background-color: #0F172A;
+            color: #f8f9fa;
+            line-height: 1.5;
+        }
+        
+        /* Req 9: CSS Grid Layout para a estrutura principal */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto 1fr auto;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 2fr 1fr; /* Coluna de form e coluna de info */
+                grid-template-areas: 
+                    "header header"
+                    "carousel carousel"
+                    "form info"
+                    "footer footer";
+            }
+        }
+        
+        .grid-header { grid-area: header; }
+        .grid-carousel { grid-area: carousel; }
+        .grid-form { grid-area: form; }
+        .grid-info { grid-area: info; }
+        .grid-footer { grid-area: footer; }
+
+        /* Estilização Customizada para combinar com o tema ENA */
+        .ena-card {
+            background-color: #1e293b;
+            border: 2px solid #14b8a6;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(20, 184, 166, 0.3);
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Req 10: NavBar do Bootstrap (Já inclui Hamburger responsivo) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-info">
+        <div class="container-fluid">
+            <a class="navbar-brand text-warning fw-bold" href="#">ENA BBQ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="person.html">Personagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="churras2.html">O Churrasco</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Inscrever-se</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Cadastro VIP</a></li>
+                            <li><a class="dropdown-item" href="#">Imprensa</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="grid-layout">
+        
+        <header class="grid-header text-center my-4">
+            <h1 class="text-info display-4 fw-bold">Garanta seu Lugar no Churrasco</h1>
+            <p class="lead">Preencha o formulário para entrar na lista de convidados do Dream BBQ.</p>
+        </header>
+
+        <!-- Req 7: Carousel Completo (Bootstrap) -->
+        <section class="grid-carousel mb-4">
+            <div id="enaCarousel" class="carousel slide border border-warning rounded" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#enaCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#enaCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#enaCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://i.ytimg.com/vi/Td7CBNu0914/maxresdefault.jpg" class="d-block w-100" alt="Ena Room">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                            <h5>O Local</h5>
+                            <p>Um ambiente instável e acolhedor.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.ytimg.com/vi/juBv2XWnwt8/maxresdefault.jpg" class="d-block w-100" alt="Ena Field">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                            <h5>A Paisagem</h5>
+                            <p>Horizontes infinitos de geometria.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/wm/2025/04/copy-of-untitled-2025-04-03t153840-901.jpg" class="d-block w-100" alt="Dream BBQ">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                            <h5>Ena Dream BBQ</h5>
+                            <p>O churrasco dos Sonhos</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#enaCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#enaCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Req 1: Formulário Completo -->
+        <section class="grid-form ena-card">
+            <h3 class="text-warning mb-3">Formulário de Inscrição</h3>
+            <form action="processar_inscricao.php" method="POST" id="formInscricao" onsubmit="return validarTudo(event)">
+                
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control bg-dark text-white border-secondary" id="nome" name="nome" required>
+                </div>
+
+                <!-- Req 12: Validação de CPF -->
+                <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control bg-dark text-white border-secondary" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required oninput="mascaraCPF(this)">
+                    <div id="cpfFeedback" class="form-text text-danger"></div>
+                </div>
+
+                <!-- Req 12: Validação de Telefone -->
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control bg-dark text-white border-secondary" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15" required oninput="mascaraTelefone(this)">
+                </div>
+
+                <div class="mb-3">
+                    <label for="mensagem" class="form-label">Por que você quer ir?</label>
+                    <textarea class="form-control bg-dark text-white border-secondary" id="mensagem" name="mensagem" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-info w-100 fw-bold">Enviar Inscrição</button>
+            </form>
+        </section>
+
+        <aside class="grid-info ena-card">
+            <h4 class="text-secondary">Informações</h4>
+            <ul class="list-unstyled">
+                <li class="mb-2">📅 Data: Indefinida</li>
+                <li class="mb-2">📍 Local: Rua da estranheza</li>
+                <li class="mb-2">🍖 Cardápio: Turróns, Churrasco e a inevitavel sensação de querer ir ao banheiro</li>
+            </ul>
+            <div class="alert alert-warning mt-4">
+                <strong>Atenção:</strong> Verifique se sua realidade é compatível com o evento.
+            </div>
+        </aside>
+
+        <footer class="grid-footer text-center mt-4 border-top border-secondary pt-3">
+            <p>&copy; 2025 Ena Fan Site. Desenvolvido com Bootstrap.</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scripts de Validação JS -->
+    <script>
+        // Máscara e Validação de CPF
+        function mascaraCPF(i) {
+            let v = i.value;
+            if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+               i.value = v.substring(0, v.length-1);
+               return;
+            }
+            i.setAttribute("maxlength", "14");
+            if (v.length == 3 || v.length == 7) i.value += ".";
+            if (v.length == 11) i.value += "-";
+        }
+
+        // Máscara de Telefone
+        function mascaraTelefone(i) {
+             let v = i.value;
+             // Remove tudo o que não é dígito
+             v = v.replace(/\D/g,"");
+             v = v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+             v = v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+             i.value = v;
+        }
+
+        function validarTudo(e) {
+            const cpf = document.getElementById('cpf').value;
+            // Validação simples de tamanho apenas para exemplo
+            if (cpf.length < 14) {
+                document.getElementById('cpfFeedback').innerText = "CPF Incompleto!";
+                e.preventDefault();
+                return false;
+            }
+            alert("Inscrição enviada para o mundo dos sonhos!");
+            return true;
+        }
+    </script>
+</body>
+</html>

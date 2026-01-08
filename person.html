@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens de Ena</title>
+    <link rel="icon" href="https://joelgc.com/img/favicon-16x16.png" type="image/png">
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" type="text/css" href="https://ka-f.fontawesome.com/releases/v6.5.1/css/free.min.css">
+    <!-- Carregando Tailwind CSS CDN para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Configuração de Cores e Estilos Personalizados - CONSISTENTE COM ENASITE.HTML */
+        :root {
+            --ena-blue: #3b82f6; /* Tailwind blue-500 */
+            --ena-yellow: #facc15; /* Tailwind yellow-400 */
+            --ena-teal: #14b8a6; /* Tailwind teal-500 */
+            --ena-bg: #1e293b; /* Tailwind slate-800 */
+        }
+        
+        /* Aplica a fonte Inter e o fundo escuro/textura */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Um azul marinho bem escuro (slate-900) */
+            color: #e2e8f0; /* Texto base claro (slate-200) */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Estilo para simular um efeito de "glitch" nas bordas do container principal */
+        .ena-container {
+            box-shadow: 0 0 20px var(--ena-teal), 0 0 40px var(--ena-blue);
+            border: 4px solid var(--ena-teal);
+        }
+
+        /* Títulos com estilo de alto contraste */
+        h1, h2, h3 {
+            text-shadow: 2px 2px 0 #000;
+            font-weight: 800; /* Extra bold */
+            letter-spacing: 0.05em; /* Tracking-wider */
+        }
+
+        /* Estilo para as imagens dos personagens dentro da tabela */
+        .char-img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 10px 2px 10px 2px; /* Bordas assimétricas */
+            border: 2px solid var(--ena-yellow);
+        }
+
+        /* Estilo da tabela para quebrar o padrão retangular, mas manter a legibilidade */
+        .char-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .char-table thead th {
+            background-color: var(--ena-teal);
+            color: #0F172A; /* slate-900 */
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .char-table tbody tr:nth-child(odd) {
+            background-color: #1e293b; /* slate-800 */
+        }
+        .char-table tbody tr:nth-child(even) {
+            background-color: #334155; /* slate-700 */
+        }
+
+        .char-table tbody tr:hover {
+            background-color: #475569; /* slate-600 */
+            box-shadow: inset 0 0 10px var(--ena-blue);
+        }
+
+    </style>
+</head>
+<body class="clearfix">
+    <div class="container ena-container mx-auto p-4 md:p-8 my-8 bg-slate-800 shadow-xl rounded-lg w-full max-w-5xl">
+        <!-- HEADER (Consistente) -->
+        <header class="mb-10 p-4 border-b-4 border-dashed border-teal-500">
+            <h1 class="text-4xl sm:text-5xl text-yellow-400 mb-4 text-center">Galeria de Personagens</h1>
+            <nav class="bg-slate-700 p-3 rounded-full shadow-lg">
+                <ul class="flex justify-around flex-wrap gap-2 text-sm sm:text-base">
+                    <li><a href="index.html" class="block py-2 px-4 rounded-full text-white hover:bg-slate-600 transition-colors">Início</a></li>
+                    <li><a href="person.html" class="block py-2 px-4 rounded-full bg-teal-500 text-slate-900 font-bold hover:bg-teal-400 transition-colors">Personagens</a></li>
+                    <li><a href="churras2.html" class="block py-2 px-4 rounded-full text-white hover:bg-slate-600 transition-colors">O Churrasco</a></li>
+                    <li><a href="https://joelgc.com/" target="_blank" class="link-externo block py-2 px-4 rounded-full text-white bg-pink-600 hover:bg-pink-500 transition-colors font-bold">Criador</a></li>
+                    
+                </ul>
+                
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <section class="p-6">
+                <h2 class="text-3xl text-blue-400 mb-6 border-b pb-2 border-blue-400/50">Os Principais Encontros de Ena</h2>
+                
+                <h3 class="text-2xl text-pink-500 mb-4">Catálogo de Entidades</h3>
+
+                <div class="overflow-x-auto rounded-lg shadow-2xl">
+                    <table class="w-full text-left char-table min-w-[700px]">
+                        <thead>
+                            <tr>
+                                <th class="p-3 w-1/12">Arte</th>
+                                <th class="p-3 w-2/12">Nome</th>
+                                <th class="p-3 w-6/12">Descrição Resumida</th>
+                                <th class="p-3 w-3/12">Origem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- MOONY -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://static.wikia.nocookie.net/enajoelg/images/f/f1/Moony_hole.png/revision/latest?cb=20220315020016" alt="Imagem da Moony" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">Moony</td>
+                                <td class="p-3 text-sm">A melhor amiga de Ena que tbm é uma lua que acompanha Ena em suas aventuras. Serve como guia e âncora emocional.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Série</td>
+                            </tr>
+                            <!-- SHEPHERD -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://static.wikia.nocookie.net/enajoelg/images/8/82/The_Shepherd.png/revision/latest?cb=20211204230658" alt="Imagem do Shepherd" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">Shepherd</td>
+                                <td class="p-3 text-sm">Figura enigmática que serviu como obstáculo em uma das aventuras da Ena, representando um desafio ou guardião.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Série</td>
+                            </tr>
+                            <!-- FROGGY -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://static.wikia.nocookie.net/enajoelg/images/b/b8/FroggyTrailer.png/revision/latest?cb=20211222164830" alt="Imagem do Froggy" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">Froggy</td>
+                                <td class="p-3 text-sm">Humanóide em fantasia de sapo preto, com estilo de arte ukiyo-e e sombreado de alto contraste.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Jogo</td>
+                            </tr>
+                            <!-- Shaman -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://ena.wiki.gg/images/Shaman-Idle.gif?f9b4e3" alt="Imagem do Shaman" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">O Xamã</td>
+                                <td class="p-3 text-sm">O Xamã é dramático e entusiasmado. Ele parece venerar os DEUSES, implorando por perdão antes de criar e matar vários clones seus para construir o Humanboard, explodindo a Casa do Selo no processo. Segundo vários NPCs, o Xamã é considerado instável e louco, alguns acreditando que ele é um mentiroso e não sabe como chegar ao Banheiro . Apesar disso, ele oferece a Ena as indicações corretas e o Prancha Humana, que leva à Ilha Orbe e, consequentemente, ao Núcleo , onde o Banheiro está localizado.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Jogo</td>
+                            </tr>
+                            <!-- TASKI MAIDEN -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://ena.wiki.gg/images/TaskiMaidenDance2.gif?87cff8" alt="Imagem da Taski Maiden" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">Taski Maiden</td>
+                                <td class="p-3 text-sm">Barulhenta, irritadiça e travessa. Desempregada e descrita por Joel G como um pouco 'gremlin'.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Jogo</td>
+                            </tr>
+                            <!-- CORAL GLASSES -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://static.wikia.nocookie.net/enajoelg/images/7/77/CoralGlassesPreview.png/revision/latest?cb=20230427221124" alt="Imagem da Coral Glasses" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">Coral Glasses</td>
+                                <td class="p-3 text-sm">Humanóide em terno preto, notável por seu olho direito coberto por um pedaço de coral em transformação e por estar constantemente suando.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Jogo</td>
+                            </tr>
+                            <!-- MITU -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://static.wikia.nocookie.net/enajoelg/images/6/68/STILLIDLE.png/revision/latest?cb=20250331210956" alt="Imagem da Mitu" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">Mitu</td>
+                                <td class="p-3 text-sm">Mitu tem um tom alegre, embora um tanto sarcástico. Ela costuma falar usando palavras de quatro letras que aparecem ao lado dela sobre as linhas, enfatizando-as. Mitu parece demonstrar felicidade ao conseguir usar palavras de quatro letras e fica estressada ou frustrada quando não consegue.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Jogo</td>
+                            </tr>
+                                <!-- DRATULA -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://static.wikia.nocookie.net/enajoelg/images/e/e6/DratulaStronk.jpg/revision/latest?cb=20250327064151" alt="Imagem do Dratula" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">Dratula</td>
+                                <td class="p-3 text-sm">Dratula gosta de provocar Froggy repetindo o próprio nome e tem medo de ser chamado de pinguim; ele insiste que não é um, mas sim um vampiro.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Jogo</td>
+                            </tr>
+                            <!-- ALEX -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://ena.wiki.gg/images/HoarderAlexItemsGround.png?379360" alt="Imagem do Alex" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">Alex, o Acumulador</td>
+                                <td class="p-3 text-sm">Alex parece ser uma pessoa facilmente irritável, ficando vermelho com a menor inconveniência. Ele também é extremamente protetor não só de seus pertences, mas também da ponte onde guarda seu acervo de itens diversos, chegando a se recusar a deixar ENA passar, mesmo depois dela ter concluído a tarefa que ele lhe deu.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Jogo</td>
+                            </tr>
+                            <!-- KANE -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://ena.wiki.gg/images/thumb/Kane.png/300px-Kane.png?ba5349" alt="Imagem do kane" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">kane</td>
+                                <td class="p-3 text-sm">Antes de seu corpo principal aparecer, sua aparência é a de um grande cofrinho inanimado, presumivelmente colado com a técnica kintsugi , a julgar pelas rachaduras visíveis em sua superfície. Sua verdadeira aparência se revela após o cofrinho ser destruído por um enorme meteoro.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Jogo</td>
+                            </tr>
+                            <!-- suspicious man -->
+                            <tr>
+                                <td class="p-3 border-r border-slate-600"><img src="https://ena.wiki.gg/images/SuspiciousMan-Idle.gif?e9af51" alt="Imagem do Homem suspeito" class="char-img"></td>
+                                <td class="p-3 font-semibold text-teal-300">Homem suspeito</td>
+                                <td class="p-3 text-sm">O Homem Suspeito é uma pessoa muito misteriosa, geralmente rindo sozinho e afirmando que estuda Ena há muito tempo, sem dar mais detalhes. Ele parece ter conhecimento sobre a Porta da Multidão , dizendo a Ena que existem "Entidades Perseguidoras" lá dentro e que ela não é bem-vinda, pois o Gênio residente da Porta, Piero , tem gostos desviantes, assim como ele. A fala do Homem Suspeito consiste em frases e palavras curtas que formam uma frase maior, geralmente com pausas e pontos finais no meio da fala.</td>
+                                <td class="p-3 text-xs uppercase bg-slate-900/50 rounded-md">Jogo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        
+        <!-- FOOTER (Consistente) -->
+        <footer class="mt-10 pt-4 border-t border-slate-700 text-center text-sm">
+            <p>&copy; 2025 Ena Churras do Sonhos Fan Site. Todos os direitos reservados a <span class="text-teal-400 font-bold">Joel Guerra.</span> | site desenvolvido por Rhegys Patryck. </p>
+        </footer>
+    </div>
+</body>
+</html>
