@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>O Churrasco dos Sonhos</title>
+    <link rel="icon" href="https://joelgc.com/img/favicon-16x16.png" type="image/png">
+    <!-- Carregando Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Req 8: Espaçamento 1.5 (line-height) aplicado globalmente */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A;
+            color: #e2e8f0;
+            min-height: 100vh;
+            line-height: 1.5 !important; /* Req 8 garantido */
+        }
+
+        /* Variáveis CSS */
+        :root {
+            --ena-blue: #3b82f6;
+            --ena-yellow: #facc15;
+            --ena-teal: #14b8a6;
+        }
+
+        .ena-container {
+            box-shadow: 0 0 20px var(--ena-teal), 0 0 40px var(--ena-blue);
+            border: 4px solid var(--ena-teal);
+        }
+
+        h1, h2, h3, h4 {
+            text-shadow: 2px 2px 0 #000;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+
+        .ena-variant-img {
+            border-radius: 15px 5px 15px 5px;
+            transition: transform 0.3s ease-in-out;
+            margin: 1.5rem auto;
+        }
+        .ena-variant-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Estilos para o Dropdown */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Animação para o modo psicodélico */
+        @keyframes rainbow-bg {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        .psychedelic-mode {
+            animation: rainbow-bg 2s linear infinite;
+        }
+    </style>
+</head>
+<body class="clearfix flex flex-col items-center">
+    
+    <!-- Req 10: CSS Navigation Bar -->
+    <div class="container ena-container mx-auto p-4 md:p-8 my-8 bg-slate-800 shadow-xl rounded-lg w-full max-w-4xl relative">
+        
+        <header class="mb-10 p-4 border-b-4 border-dashed border-teal-500">
+            <h1 class="text-4xl sm:text-5xl text-yellow-400 mb-4 text-center">Detalhes do Churrasco</h1>
+            
+            <!-- Req 4: Menu Sandwich Responsivo -->
+            <nav class="bg-slate-700 p-3 rounded-lg shadow-lg relative">
+                <!-- Botão Hambúrguer (Visível apenas em Mobile) -->
+                <div class="md:hidden flex justify-between items-center">
+                    <span class="text-white font-bold">Menu</span>
+                    <button onclick="toggleMenu()" class="text-white focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Lista de Links -->
+                <ul id="nav-links" class="hidden md:flex flex-col md:flex-row justify-around items-center gap-2 text-sm sm:text-base mt-4 md:mt-0">
+                    <li><a href="index.html" class="block py-2 px-4 rounded-full text-white hover:bg-slate-600 transition-colors">Início</a></li>
+                    <li><a href="person.html" class="block py-2 px-4 rounded-full text-white hover:bg-slate-600 transition-colors">Personagens</a></li>
+                    <li><a href="churras2.html" class="block py-2 px-4 rounded-full bg-teal-500 text-slate-900 font-bold hover:bg-teal-400 transition-colors">O Churrasco</a></li>
+                    
+                    <!-- Req 10: CSS Dropdown -->
+                    <li class="relative dropdown group">
+                        <a href="#" class="block py-2 px-4 rounded-full text-white bg-blue-600 hover:bg-blue-500 transition-colors cursor-pointer">
+                            Mais ▼
+                        </a>
+                        <div class="dropdown-menu hidden absolute left-0 mt-0 w-48 bg-slate-900 rounded-md shadow-lg z-50 border border-teal-500">
+                            <a href="inscricao.html" class="block px-4 py-2 text-sm text-white hover:bg-teal-600">Inscrever-se (Novo!)</a>
+                            <a href="https://joelgc.com/" target="_blank" class="block px-4 py-2 text-sm text-white hover:bg-pink-600">Criador</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Botões para JS Funcionalidades -->
+            <div class="flex justify-center gap-4 mb-6">
+                <button onclick="togglePsychedelic()" class="bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded shadow-lg transition transform hover:scale-105">
+                    💊 Modo Psicodélico
+                </button>
+                <button onclick="changeTitleColor()" class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded shadow-lg transition transform hover:scale-105">
+                    🎨 Mudar Cor Título
+                </button>
+            </div>
+
+            <section id="menu-churrasco" class="p-6 space-y-8">
+                
+                <!-- Req 5: Elemento Gráfico SVG -->
+                <div class="flex justify-center mb-4">
+                    <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" stroke="#facc15" stroke-width="4" fill="blue" />
+                        <rect x="35" y="35" width="30" height="30" fill="yellow" transform="rotate(45 50 50)" />
+                        <circle cx="40" cy="40" r="5" fill="black" />
+                        <circle cx="60" cy="40" r="5" fill="white" />
+                        <path d="M 35 60 Q 60 75 65 60" stroke="black" stroke-width="3" fill="none" />
+                    </svg>
+                    <p class="text-center self-center ml-4 text-teal-400 font-bold"></p>
+                </div>
+
+                <h2 id="main-title" class="text-3xl text-blue-400 mb-6 border-b pb-2 border-blue-400/50">As Várias Faces de Ena</h2>
+
+                <!-- Conteúdo de Texto -->
+                <p class="text-lg italic mb-8 p-4 bg-slate-700 rounded-lg border-l-4 border-yellow-400">
+                    ENA não é apenas um ser, ela é um eco em constante mutação.
+                </p>
+
+                <!-- Req 6: Vídeo do YouTube -->
+                <div class="mb-8 bg-black rounded-lg overflow-hidden shadow-xl border border-pink-500">
+                    <h3 class="text-center text-pink-500 py-2">Trailer Oficial</h3>
+                    <div class="aspect-w-16 aspect-h-9 w-full flex justify-center">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/ju1XW67QJ2U" title="ENA: Dream BBQ - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-700 rounded-xl border border-blue-500">
+                    <h3 class="text-2xl text-yellow-400 mb-4">Ena (Série Animada)</h3>
+                    <img src="https://static.wikia.nocookie.net/enajoelg/images/7/7c/EnaNormal.png/revision/latest?cb=20210215040956" alt="Ena Serie" class="ena-variant-img w-full max-w-sm block mx-auto shadow-2xl shadow-blue-500/30">
+                    <p class="mb-4">
+                        A ENA da série animada de Joel G, publicada no YouTube.
+                    </p>
+                </div>
+                <div class="p-6 bg-slate-700 rounded-xl border border-pink-500">
+                    <h4 class="text-2xl text-pink-500 mb-4">A ENA de Dream BBQ</h4>
+                    
+                    <img src="https://static.wikia.nocookie.net/enajoelg/images/8/8e/EnaVariant.png/revision/latest?cb=20220106032435" alt="[Imagem da Ena de Dream BBQ]" class="ena-variant-img w-full max-w-sm block mx-auto shadow-2xl shadow-pink-500/30">
+                    
+                    <p class="mb-4">
+                        A Ena do Jogo já segue um rumo diferente, porém a estranheza da série se mantém no jogo. Nessa versão, Ena não só possui cores diferentes como também personalidades diferentes. O **lado vermelho** é o lado do vendedor, essa personalidade tende a ser muito mais bem-educada, paciente e tranquila. O outro lado chega a ser o oposto: o **Lado cinza** é a parte irritada e sem paciência dessa versão da Ena.
+                    </p>
+                    <p class="mb-4 border-l-2 pl-3 border-pink-500">
+                        Ao longo do jogo, ela muda de forma, de expressão e até de tom, mas nunca perde a essência. Essas mudanças não são simples variações de humor: são transformações que revelam diferentes faces de sua identidade dentro da consciência dela. Ela não busca se consertar nem se entender completamente, apenas vive o processo de ser muitas em um só corpo.
+                    </p>
+                    <p>
+                        Para mais detalhes sobre os itens do jogo, consulte o 
+                        <a href="https://enajoelg.fandom.com/wiki/Ena_(Animated_Series)" target="_blank" class="text-teal-400 underline font-semibold hover:text-teal-300 transition-colors">
+                            Fandom de ENA
+                        </a>.
+                    </p>
+                </div>
+
+                <!-- Req 11: Iframe com conteúdo (Ex: Propaganda fictícia) -->
+                <div class="mt-8 p-4 bg-gray-900 border border-dashed border-gray-500 rounded text-center">
+                    <p class="text-xs text-gray-400 mb-2">Publicidade de Outra Dimensão</p>
+                    <iframe src="https://en.wikipedia.org/wiki/Glitch_art" style="width:100%; height:200px; border:none; background: white;" title="Wikipedia Glitch Art"></iframe>
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="mt-10 pt-4 border-t border-slate-700 text-center text-sm">
+            <p>&copy; 2025 Ena Churras do Sonhos Fan Site.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts para Funcionalidades -->
+    <script>
+        // Funcionalidade JS 1: Menu Sanduíche (Modificando CSS/Classes)
+        function toggleMenu() {
+            const menu = document.getElementById('nav-links');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            menu.classList.toggle('flex-col');
+        }
+
+        // Funcionalidade JS 2: Modo Psicodélico (Adicionando Classe CSS)
+        function togglePsychedelic() {
+            const body = document.body;
+            body.classList.toggle('psychedelic-mode');
+        }
+
+        // Funcionalidade JS 3: Modificar Cor do HTML diretamente
+        function changeTitleColor() {
+            const title = document.getElementById('main-title');
+            const colors = ['#facc15', '#ec4899', '#14b8a6', '#ffffff'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            title.style.color = randomColor;
+            title.innerHTML = "As Várias Faces de Ena (Cor Alterada!)";
+        }
+    </script>
+</body>
+</html>

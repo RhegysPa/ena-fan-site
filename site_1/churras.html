@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>O Churrasco dos Sonhos</title>
+    <link rel="icon" href="https://joelgc.com/img/favicon-16x16.png" type="image/png">
+    <!-- Carregando Tailwind CSS CDN para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Configuração de Cores e Estilos Personalizados - CONSISTENTE COM OUTRAS PÁGINAS */
+        :root {
+            --ena-blue: #3b82f6; /* Tailwind blue-500 */
+            --ena-yellow: #facc15; /* Tailwind yellow-400 */
+            --ena-teal: #14b8a6; /* Tailwind teal-500 */
+            --ena-bg: #1e293b; /* Tailwind slate-800 */
+        }
+        
+        /* Aplica a fonte Inter e o fundo escuro/textura */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Um azul marinho bem escuro (slate-900) */
+            color: #e2e8f0; /* Texto base claro (slate-200) */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Estilo para simular um efeito de "glitch" nas bordas do container principal */
+        .ena-container {
+            box-shadow: 0 0 20px var(--ena-teal), 0 0 40px var(--ena-blue);
+            border: 4px solid var(--ena-teal);
+        }
+
+        /* Títulos com estilo de alto contraste */
+        h1, h2, h3, h4 {
+            text-shadow: 2px 2px 0 #000;
+            font-weight: 800; /* Extra bold */
+            letter-spacing: 0.05em; /* Tracking-wider */
+        }
+
+        /* Estilo para as imagens das variantes de ENA */
+        .ena-variant-img {
+            border-radius: 15px 5px 15px 5px; /* Bordas assimétricas */
+            transition: transform 0.3s ease-in-out;
+            margin: 1.5rem auto; /* Centraliza */
+        }
+        .ena-variant-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="clearfix">
+    <div class="container ena-container mx-auto p-4 md:p-8 my-8 bg-slate-800 shadow-xl rounded-lg w-full max-w-4xl">
+        <!-- HEADER (Consistente) -->
+        <header class="mb-10 p-4 border-b-4 border-dashed border-teal-500">
+            <h1 class="text-4xl sm:text-5xl text-yellow-400 mb-4 text-center">Detalhes do Churrasco</h1>
+            <nav class="bg-slate-700 p-3 rounded-full shadow-lg">
+                <ul class="flex justify-around flex-wrap gap-2 text-sm sm:text-base">
+                    <li><a href="homena.html" class="block py-2 px-4 rounded-full text-white hover:bg-slate-600 transition-colors">Início</a></li>
+                    <li><a href="person.html" class="block py-2 px-4 rounded-full text-white hover:bg-slate-600 transition-colors">Personagens</a></li>
+                    <li><a href="churras.html" class="block py-2 px-4 rounded-full bg-teal-500 text-slate-900 font-bold hover:bg-teal-400 transition-colors">O Churrasco</a></li>
+                    <li><a href="https://joelgc.com/" target="_blank" class="link-externo block py-2 px-4 rounded-full text-white bg-pink-600 hover:bg-pink-500 transition-colors font-bold">Criador</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <section id="menu-churrasco" class="p-6 space-y-8">
+                <h2 class="text-3xl text-blue-400 mb-6 border-b pb-2 border-blue-400/50">As Várias Faces de Ena</h2>
+                
+                <p class="text-lg italic mb-8 p-4 bg-slate-700 rounded-lg border-l-4 border-yellow-400">
+                    ENA não é apenas um ser; ela é um eco em constante mutação. Seu rosto é um mosaico de emoções que dançam entre o êxtase e a ruína — fragmentos de alma que se tocam sem jamais se fundirem por completo. Dentro dela, as fronteiras do "eu" são maleáveis, derretendo-se como tinta num sonho febril. <br>
+                    ENA é o paradoxo da consciência fragmentada: múltipla, mas inteira; instável, mas real. Ela é uma canção que muda de tom, mas mantém o mesmo ritmo. E mesmo quando se divide em mil versões de si, ainda é ENA, o rosto que observa o absurdo e o transforma em beleza.
+                </p>
+
+                <!-- VARIANTE DA SÉRIE ANIMADA (BLUE/YELLOW) -->
+                <div class="p-6 bg-slate-700 rounded-xl border border-blue-500">
+                    <h3 class="text-2xl text-yellow-400 mb-4">Ena (Série Animada)</h3>
+                    
+                    <img src="https://static.wikia.nocookie.net/enajoelg/images/7/7c/EnaNormal.png/revision/latest?cb=20210215040956" alt="[Imagem da Ena da Série Animada]" class="ena-variant-img w-full max-w-sm block mx-auto shadow-2xl shadow-blue-500/30">
+                    
+                    <p class="mb-4">
+                        A ENA da série animada de Joel G, publicada no YouTube, é a mais pura tradução do surreal. Ela habita um mundo digital, fragmentado, feito de falhas, pixels e ecos de uma era perdida — um lugar onde a realidade é apenas um erro que insiste em continuar rodando.
+                    </p>
+                    <p>
+                        A Ena da versão da série animada possui uma coloração de azul e amarelo. Suas duas faces de cores distintas possuem sentimentos antagônicos, sendo a **parte azul** o lado triste, melancólico e trágico de Ena, e o **lado amarelo** o lado alegre, extrovertido e divertido. 
+                    </p>
+                    <p class="mt-4 border-l-2 pl-3 border-yellow-400">
+                        Ao longo dos episódios, ENA atravessa sonhos e delírios digitais, conversando com seres igualmente fragmentados. Estátuas que choram, relógios que sangram, figuras presas entre o literal e o metafísico. Nada é fixo, nada é certo. E, mesmo assim, há algo profundamente humano nela: a eterna busca por sentido dentro do absurdo.
+                    </p>
+                </div>
+                
+                <!-- VARIANTE DO JOGO (DREAM BBQ - RED/GRAY) -->
+                <div class="p-6 bg-slate-700 rounded-xl border border-pink-500">
+                    <h4 class="text-2xl text-pink-500 mb-4">A ENA de Dream BBQ</h4>
+                    
+                    <img src="https://static.wikia.nocookie.net/enajoelg/images/8/8e/EnaVariant.png/revision/latest?cb=20220106032435" alt="[Imagem da Ena de Dream BBQ]" class="ena-variant-img w-full max-w-sm block mx-auto shadow-2xl shadow-pink-500/30">
+                    
+                    <p class="mb-4">
+                        A Ena do Jogo já segue um rumo diferente, porém a estranheza da série se mantém no jogo. Nessa versão, Ena não só possui cores diferentes como também personalidades diferentes. O **lado vermelho** é o lado do vendedor, essa personalidade tende a ser muito mais bem-educada, paciente e tranquila. O outro lado chega a ser o oposto: o **Lado cinza** é a parte irritada e sem paciência dessa versão da Ena.
+                    </p>
+                    <p class="mb-4 border-l-2 pl-3 border-pink-500">
+                        Ao longo do jogo, ela muda de forma, de expressão e até de tom, mas nunca perde a essência. Essas mudanças não são simples variações de humor: são transformações que revelam diferentes faces de sua identidade dentro da consciência dela. Ela não busca se consertar nem se entender completamente, apenas vive o processo de ser muitas em um só corpo.
+                    </p>
+                    <p>
+                        Para mais detalhes sobre os itens do jogo, consulte o 
+                        <a href="https://enajoelg.fandom.com/wiki/Ena_(Animated_Series)" target="_blank" class="text-teal-400 underline font-semibold hover:text-teal-300 transition-colors">
+                            Fandom de ENA
+                        </a>.
+                    </p>
+                </div>
+            </section>
+        </main>
+        
+        <!-- FOOTER (Consistente) -->
+        <footer class="mt-10 pt-4 border-t border-slate-700 text-center text-sm">
+            <p>&copy; 2025 Ena Churras do Sonhos Fan Site. Todos os direitos reservados a <span class="text-teal-400 font-bold">Joel Guerra.</span> | site desenvolvido por Rhegys Patryck. </p>
+        </footer>
+    </div>
+</body>
+</html>
